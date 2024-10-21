@@ -1,0 +1,495 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f1f5;
+  color: #333;
+  background: hsl(240, 20%, 15%);
+}
+
+/* Layout */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #2d2a3d;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.menu ul {
+  list-style: none;
+  margin-top: 4rem;
+}
+
+.menu ul li {
+  margin-bottom: 20px;
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.notification {
+  background-color: red;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.discount {
+  background-color: #ff5a5f;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.discount .btn {
+  display: block;
+  background-color: #fff;
+  color: #ff5a5f;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.search-bar {
+  all: unset;
+
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+/* Featured Game Section */
+.featured-game {
+  position: relative;
+  background-image: url("./assests/hogwart.jpg");
+  background-size: cover; /* Ensure the image covers the section */
+  background-position: center; /* Center the background image */
+  padding: 50px; /* Add padding for spacing */
+  color: white; /* Make text white to contrast against the background */
+}
+
+.featured-game::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.featured-game .game-info {
+  position: relative;
+  z-index: 2;
+}
+.featured-game .game-description {
+  max-width: 600px;
+}
+
+.featured-game .price {
+  display: flex;
+  gap: 10px;
+}
+
+.featured-game .buy-btn {
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+.game-description {
+  margin: 10px 0;
+  color: #666;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.new-price {
+  font-size: 24px;
+  color: #ff5a5f;
+}
+
+.old-price {
+  margin-left: 15px;
+  text-decoration: line-through;
+  color: #999;
+}
+
+.buy-btn {
+  background-color: #ff5a5f;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.game-img {
+  max-width: 45%;
+  border-radius: 10px;
+}
+
+/* Actual Games Section */
+.actual-games .games-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.game-card {
+  /* background-color: #fff; */
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.game-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.game-card p {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Right Sidebar */
+.right-sidebar {
+  width: 250px;
+  background-color: #2d2a3d;
+  color: #fff;
+  padding: 20px;
+}
+
+.friends-online ul,
+.recently-played ul {
+  list-style: none;
+}
+
+.friends-online li,
+.recently-played li {
+  margin-bottom: 10px;
+}
+/* Featured Game Section Styles */
+.featured-game {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.featured-game .game-info {
+  max-width: 50%;
+}
+
+.game-description {
+  margin: 10px 0;
+  color: #ccc;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.new-price {
+  font-size: 24px;
+  color: hsl(0, 80%, 60%);
+}
+
+.old-price {
+  margin-left: 15px;
+  text-decoration: line-through;
+  color: #999;
+}
+
+.buy-btn {
+  background-color: hsl(0, 80%, 50%);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.game-img {
+  max-width: 45%;
+  border-radius: 10px;
+}
+
+/* Actual Games, Trending, and Recommendations Sections */
+h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.actual-games,
+.trending-games,
+.recommended-games {
+  margin-bottom: 30px;
+}
+
+.games-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.game-card {
+  background-color: hsla(0, 0%, 100%, 0.2); /* Glass effect */
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.game-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.game-card p {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Gaming News Section */
+.gaming-news {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news-card {
+  background-color: hsla(0, 0%, 100%, 0.1); /* Glass effect */
+  backdrop-filter: blur(5px);
+  padding: 15px;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.news-card h4 {
+  margin-bottom: 10px;
+  color: hsl(0, 80%, 60%);
+}
+/* Footer Styles */
+.footer {
+  background-color: hsla(0, 0%, 100%, 0.1); /* Glass effect */
+  backdrop-filter: blur(10px);
+  /* padding: 40px 0; */
+  margin: 0;
+  color: #fff;
+  width: 100%;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  /* justify-content: space-between;  */
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  margin: 20px;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  font-size: 20px;
+  color: hsl(0, 80%, 60%);
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links li a:hover {
+  color: hsl(0, 80%, 60%);
+  text-decoration: underline;
+}
+
+/* Social Media Icons */
+.social-icons a {
+  margin: 0 10px;
+  width: 40px;
+  height: 40px;
+  background-color: hsla(0, 0%, 100%, 0.2);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.social-icons img {
+  width: 20px;
+  height: 20px;
+}
+
+.social-icons a:hover {
+  background-color: hsl(0, 80%, 50%);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background-color: hsla(0, 0%, 100%, 0.05); /* Slight glass effect */
+  padding: 20px 0;
+  margin-top: 30px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+  color: #999;
+}
+.wishlist,
+.library,
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wishlist li,
+.library li {
+  display: flex;
+  gap: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.categories li {
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
